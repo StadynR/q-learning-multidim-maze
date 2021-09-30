@@ -193,28 +193,15 @@ void search_for_MAX_unvisited(void)
     //MAX=sensor[0];
     //for(i=0;i<4;i++) if(sensor[i]>=MAX) {MAX=sensor[i];grad_pointer=i;}  // grad_pointer apunta al maximo valor
     
+    randomize();
+    
     if(no_unvisited()) MAX = -1;
     else{
-        for(i=0;i<4;i++){
-        if(sensor[i] != -1)
-            sum+=sensor[i];
-        }
-        if(sum > 1) r = random(sum); else r = 0;
-        //cout << "suma: " << sum << " r: " << r << endl;
-        //getch();
-        lim_l = 0;
-        for(i=0;i<4;i++){ 
-            if(sensor[i]!=-1){
-                lim_r = sensor[i] + lim_l;
-                if(r >= lim_l && r <= lim_r){
-                    MAX=sensor[i];
-                    grad_pointer = i;
-                    break;
-                }
-                lim_l = lim_r;
-            }
-        }
+        do{
+            i = random(4);            
+        }while(sensor[i] == -1);
     }
+    grad_pointer = i;
 }
 //------------------------------------------------------------
  void search_for_MAX(void) 
