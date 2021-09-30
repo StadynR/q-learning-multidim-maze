@@ -178,16 +178,16 @@ void search_for_MAX_unvisited(void)
 {
  int i,j, sum = 0, r, lim_l, lim_r;
     
-    sensor[0]= S[file_agent][column_agent-1];    // lee  a izquierda
+    sensor[0]= R[file_agent][column_agent-1];    // lee  a izquierda
     if(column_agent==0 || already_visited(file_agent, column_agent-1)) sensor[0]=-1;            // desborde a la izquierd  
         
-    sensor[1]= S[file_agent][column_agent+1];    // lee a  derecha
+    sensor[1]= R[file_agent][column_agent+1];    // lee a  derecha
     if(column_agent==columns-1 || already_visited(file_agent, column_agent+1)) sensor[1]=-1;
     
-    sensor[2]= S[file_agent-1][column_agent];    // lee arriba
+    sensor[2]= R[file_agent-1][column_agent];    // lee arriba
     if(file_agent==0 || already_visited(file_agent-1, column_agent)) sensor[2]=-1;
     
-    sensor[3]= S[file_agent+1][column_agent];    // lee abjo
+    sensor[3]= R[file_agent+1][column_agent];    // lee abjo
     if(file_agent==files-1 || already_visited(file_agent+1, column_agent)) sensor[3]=-1;
 
     //MAX=sensor[0];
@@ -363,7 +363,7 @@ void Q_explore(void)
 
      save_q();//save previous Q
      plot_maze();
-     plot_olor_gradient();
+     plot_cheese();
      plot_agent();
      print_Q();
      //print_R();

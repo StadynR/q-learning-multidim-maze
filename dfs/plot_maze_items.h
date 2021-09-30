@@ -91,7 +91,7 @@ int x,y;
     captured_color=getpixel(x_cheese,y_cheese);   //  el sensor captura en una esquina
  
  setcolor(YELLOW); //  
- setfillstyle(SOLID_FILL,RED);   
+ setfillstyle(SOLID_FILL,YELLOW);   
  bar(x_cheese,y_cheese,x_cheese+cheese_size,y_cheese+cheese_size) ;   
     
 }

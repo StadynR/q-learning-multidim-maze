@@ -243,7 +243,7 @@ void loop(void)  //                                                           lo
             
             cc << step;  
             cc >> strcc; 
-            datas.append("Ciclos: "+strcc+"\n\n");
+            datas.append("Steps: "+strcc+"\n\n");
             
             episode++;
             cout<<datas<<endl;

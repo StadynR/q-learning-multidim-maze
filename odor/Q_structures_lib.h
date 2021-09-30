@@ -408,7 +408,6 @@ void Q_explore(void)
      stcont = 0;
          
      episode=1;             // 
-     t0=clock();
     do{
          save_q();//save previous Q
          plot_maze();
@@ -418,6 +417,7 @@ void Q_explore(void)
          //print_R();
          //print_S();   //  gradiente de olor
          step=0;
+         t0=clock();
          do
           {
            
@@ -471,7 +471,7 @@ void Q_explore(void)
             
             cc << step;  
             cc >> strcc; 
-            datas.append("Ciclos: "+strcc+"\n\n");
+            datas.append("Steps: "+strcc+"\n\n");
             
             episode++;
             cout<<datas<<endl;
@@ -486,7 +486,9 @@ void Q_explore(void)
     print_S();   
 
     salvar_Q();    
-    salvar_data(datas);   
+    salvar_data(datas);
+    Beep(700, 50);
+    Beep(2700,50);
     
     //cout <<" one problem solved-- " <<endl;    
 }  
