@@ -420,8 +420,6 @@ void Q_explore(void)
          t0=clock();
          do
           {
-           
-           //DFS();
               
            search_for_MAX();
            mov = grad_pointer;
